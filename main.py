@@ -15,25 +15,18 @@ class Cookie:
         self._width = width
         self._height = height
 
-    def draw(self, cookie_level):
+    def draw():
         
-        # cookie = pygame.image.load(f"cookies/cookies_{cookie_level}.png")
-        # cookie_rect = cookie.get_rect()
-        # cookie_rect.center = (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2)
-
-        # window.blit(cookie, cookie_rect)
-
-        original_cookie = pygame.image.load("cookies.png")
-        # Adjust x_pos based on cookie_level to get the next cookie
-        x_offset = self._x_pos + (cookie_level - 1) * self._width
-        cookie = original_cookie.subsurface(pygame.Rect(x_offset, self._y_pos, self._height, self._width))
-
+        cookie = pygame.image.load(f"cookies/cookies_{cookie_level}.png")
         cookie_rect = cookie.get_rect()
-        cookie_rect.center = (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 )
+        cookie_rect.center = (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2)
+
         window.blit(cookie, cookie_rect)
 
 
-cookie = Cookie(18,25,250,250)
+
+
+
 
 
 cookie_level = 1
@@ -65,7 +58,7 @@ while running:
     window.fill((255, 255, 255)) 
     window.blit(upgrade_tekst_render,upgrade_tekst_rect)
 
-    cookie.draw(cookie_level)
+    Cookie.draw()
 
 
     
