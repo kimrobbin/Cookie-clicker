@@ -9,19 +9,22 @@ pygame.display.set_caption("Cookie clicker")
 
 
 class Cookie:
-    def __init__(self, x_pos, y_pos,width, height):
+    def __init__(self, x_pos:int, y_pos:int, width:int, height:int, click = 1):
         self._x_pos = x_pos
         self._y_pos = y_pos
         self._width = width
         self._height = height
+        self._click = click
 
     def draw():
-        
         cookie = pygame.image.load(f"cookies/cookies_{cookie_level}.png")
         cookie_rect = cookie.get_rect()
         cookie_rect.center = (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2)
 
         window.blit(cookie, cookie_rect)
+
+    def cookie_clicked():
+         pass
 
 
 
@@ -30,7 +33,6 @@ class Cookie:
 
 
 cookie_level = 1
-
 
 font = pygame.font.SysFont('Arial', 32)
 
