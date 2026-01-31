@@ -131,35 +131,35 @@ while running:
                             cookie.cps = 50 
                         elif cookie.cookie_level > 2:
                                 cookie.cps *= 2
-
-                if auto_rect.collidepoint(event.pos) and cookie.clicks >= cookie.auto_price:
-                    cookie.clicks -= cookie.auto_price
-                    cookie.auto_level += 1 
-                    if cookie.auto_level == 1:
-                        cookie.auto_cps += 1 
-                    elif cookie.auto_level == 2:
-                        cookie.auto_cps += 20 
-                    elif cookie.auto_level == 3:
-                        cookie.auto_cps += 50 
-                    else:
-                        cookie.auto_cps *= 2  
-                    # Pris økning
-                    if cookie.auto_level == 1:
-                        cookie.auto_price += 400 
-                    elif cookie.auto_level == 1:
-                        cookie.auto_price += 1000 
-                    elif cookie.auto_level == 1:
-                        cookie.auto_price += 2000 
-                    else:
-                        cookie.auto_price *= 2 
-                    
-                        
                 else:
                     if upgrade_tekst_rect.collidepoint(event.pos) and cookie.clicks >= cookie.price_clicks:
 
                         cookie.clicks -= cookie.price_clicks
-                        if cookie.cookie_level >= 13:
-                            cookie.price_clicks *= 4
+                        if cookie.cookie_level >= 9:
+                            cookie.price_clicks *= 2
+                            cookie.cps *= 2
+
+
+                if auto_rect.collidepoint(event.pos) and cookie.clicks >= cookie.auto_price:
+                    cookie.clicks -= cookie.auto_price
+                    cookie.auto_level += 1 
+
+                    # Oppgraderer hvor mange auto cookie gir og opptaterer prisen
+                    if cookie.auto_level == 1:
+                        cookie.auto_cps += 1 
+                        cookie.auto_price += 400 
+                    elif cookie.auto_level == 2:
+                        cookie.auto_cps += 20 
+                        cookie.auto_price += 1000 
+                    elif cookie.auto_level == 3:
+                        cookie.auto_cps += 50 
+                        cookie.auto_price += 2000 
+                    else:
+                        cookie.auto_cps *= 2  
+                        cookie.auto_price *= 2 
+               
+                    
+                        
 
 
                 if cookie_rect.collidepoint(event.pos):
