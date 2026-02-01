@@ -108,7 +108,7 @@ while running:
                 #     print(f"hit , {upgrade_tekst_rect}")
 
                 # Logikken for når cookie levelet er under 9 
-                if cookie.cookie_level < 9: 
+                if cookie.cookie_level < 10: 
                     if upgrade_tekst_rect.collidepoint(event.pos) and cookie.clicks >= cookie.price_clicks:
                         cookie.cookie_level +=1
                         cookie.clicks -= cookie.price_clicks
